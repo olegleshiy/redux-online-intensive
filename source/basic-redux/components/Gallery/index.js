@@ -33,7 +33,7 @@ export default class Gallery extends Component {
         const state = store.getState();
 
         const selectedPhoto = state.gallery.photos.find(
-            (_, photoIndex) =>  photoIndex === state.gallery.selectedPhotoIndex,
+            (_, photoIndex) => photoIndex === state.gallery.selectedPhotoIndex,
         );
 
         return (
