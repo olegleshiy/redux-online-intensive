@@ -31,7 +31,6 @@ export default class Gallery extends Component {
 
     render () {
         const state = store.getState();
-
         const selectedPhoto = state.gallery.photos.find(
             (_, photoIndex) => photoIndex === state.gallery.selectedPhotoIndex,
         );
