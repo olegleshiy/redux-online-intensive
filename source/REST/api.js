@@ -11,14 +11,14 @@ export const api = {
                 },
             });
         },
-        create (message) {
+        create (comment) {
             return fetch(`${MAIN_URL}/feed`, {
                 method: 'POST',
                 headers: {
-                    'Content-Type': 'application/json',
                     'x-no-auth': groupId,
+                    'Content-Type': 'application/json',
                 },
-                body: JSON.stringify({ message }),
+                body: JSON.stringify({ comment }),
             });
         },
     },
