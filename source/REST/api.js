@@ -1,5 +1,5 @@
 //Instruments
-import { MAIN_URL, groupId, invite } from "./config";
+import { MAIN_URL, groupId } from "./config";
 
 export const api = {
     posts: {
