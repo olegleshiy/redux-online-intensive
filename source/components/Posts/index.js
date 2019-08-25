@@ -1,7 +1,7 @@
 // Core
 import React, { Component } from 'react';
 import { connect } from "react-redux";
-import { bindActionCreators } from "redux";
+import { bindActionCreators } from 'redux';
 import FlipMove from 'react-flip-move';
 
 // Instruments
@@ -12,7 +12,7 @@ import { mockedProfile } from '../../instruments/mockedData';
 import { Composer, Catcher, Post } from '../../components';
 
 //Actions
-import { fetchPostsAsync, createPostAsync } from "../../bus/posts/actions";
+import { postsActions } from '../../bus/posts/actions';
 
 const mapStateToProps = (state) => {
     return {
@@ -23,8 +23,8 @@ const mapStateToProps = (state) => {
 const mapDispatchToProps = (dispatch) => {
     return {
         actions: bindActionCreators({
-            fetchPostsAsync,
-            createPostAsync,
+            fetchPostsAsync: postsActions.fetchPostsAsync,
+            createPostAsync: postsActions.createPostAsync,
         }, dispatch),
     };
 };
@@ -38,7 +38,7 @@ export default class Posts extends Component {
 
     componentDidMount () {
         const { actions } = this.props;
-
+        console.log("this.props componentDidMount1", this.props);
         actions.fetchPostsAsync();
     }
 

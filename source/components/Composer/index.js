@@ -31,7 +31,6 @@ export default class Composer extends Component {
 
     render () {
         const { profile } = this.props;
-        console.log("profile", profile);
 
         return (
             <Formik
