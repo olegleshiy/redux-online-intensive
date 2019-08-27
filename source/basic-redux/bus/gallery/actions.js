@@ -1,5 +1,5 @@
 //Types
-import { SHOW_PREV_PHOTO, SHOW_SELECTED_PHOTO, SHOW_NEXT_PHOTO } from "./types";
+import { SHOW_PREV_PHOTO, SHOW_SELECTED_PHOTO, SHOW_NEXT_PHOTO } from './types';
 
 export const  showPrevPhoto = () => {
     return {

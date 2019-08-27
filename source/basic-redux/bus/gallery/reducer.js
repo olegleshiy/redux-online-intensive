@@ -21,29 +21,24 @@ export const galleryReducer = (state = initialState, action) => {
 
     switch (action.type) {
         case SHOW_PREV_PHOTO:
-            console.log("stateReducerPrev", state);
             if (state.selectedPhotoIndex === 0) {
                 return state;
             }
-            console.log("stateReducerPrevDefault", state);
             return {
                 ...state,
                 selectedPhotoIndex: state.selectedPhotoIndex - 1,
             };
 
         case SHOW_SELECTED_PHOTO:
-            console.log("stateReducerSelected", state);
             return {
                 ...state,
                 selectedPhotoIndex: Number(action.payload),
             };
 
         case SHOW_NEXT_PHOTO:
-            console.log("stateReducerNext", state);
             if (state.selectedPhotoIndex === state.photos.length - 1) {
                 return state;
             }
-            console.log("stateReducerNextDefault", state);
             return {
                 ...state,
                 selectedPhotoIndex: state.selectedPhotoIndex + 1,

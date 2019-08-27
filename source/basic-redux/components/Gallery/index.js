@@ -38,8 +38,6 @@ export default class Gallery extends Component {
         const selectedPhoto = state.gallery.photos.find(
             (_, photoIndex) => photoIndex === state.gallery.selectedPhotoIndex,
         );
-        console.log("selectedPhoto", selectedPhoto);
-        console.log("state", state);
         return (
             <section className = { Styles.gallery }>
                 <img src = { selectedPhoto.url } />

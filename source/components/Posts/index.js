@@ -1,6 +1,6 @@
 // Core
 import React, { Component } from 'react';
-import { connect } from "react-redux";
+import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import FlipMove from 'react-flip-move';
 
@@ -38,7 +38,6 @@ export default class Posts extends Component {
 
     componentDidMount () {
         const { actions } = this.props;
-        console.log("this.props componentDidMount1", this.props);
         actions.fetchPostsAsync();
     }
 

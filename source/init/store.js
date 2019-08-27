@@ -3,7 +3,7 @@ import { createStore } from 'redux';
 
 //Roots
 import { rootReducer } from './rootReducer';
-import { rootSaga } from './middleware/rootSaga';
+import { rootSaga } from './rootSaga';
 
 //Middleware
 import { enhancedStore, sagaMiddleware } from './middleware/core';
