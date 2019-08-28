@@ -6,6 +6,7 @@ import cx from 'classnames';
 // Instruments
 import Styles from './styles.m.css';
 import { login } from '../../bus/forms/shapes';
+import { loginAsync } from '../../bus/auth/saga/workers';
 
 export default class LoginForm extends Component {
     static defaultProps = {
@@ -13,11 +14,11 @@ export default class LoginForm extends Component {
         isFetching: false,
 
         // Actions
-        loginAsync: () => {},
+        //loginAsync: loginAsync,
     };
 
     _submitLoginForm = (credentials) => {
-        this.props.loginAsync(credentials);
+        loginAsync(credentials);
     };
 
     render () {

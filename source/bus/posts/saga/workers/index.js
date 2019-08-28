@@ -1,2 +1,2 @@
-import { createPost } from './createPost';
-import { fillPosts } from './fetchPosts';
+export { createPost } from './createPost';
+export { fillPosts } from './fetchPosts';
