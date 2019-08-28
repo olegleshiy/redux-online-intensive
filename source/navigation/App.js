@@ -9,10 +9,12 @@ import { Login, Signup, Feed, Profile, NewPassword } from '../pages';
 
 //Instruments
 import { book } from './book';
+import {login} from '../bus/forms/shapes';
 
 const mapStateToProps = (state) => {
     return {
         isAuthenticated: state.auth.get('isAuthenticated'),
+        login: JSON.parse(localStorage.getItem('login')),
     }
 };
 
@@ -23,7 +25,7 @@ export default class App extends Component {
     render () {
         const { isAuthenticated } = this.props;
 
-        return isAuthenticated ? (
+        return isAuthenticated && login ? (
             <Switch>
                 <Route component = { Feed } path = { book.feed } />
                 <Route component = { Profile } path = { book.profile } />

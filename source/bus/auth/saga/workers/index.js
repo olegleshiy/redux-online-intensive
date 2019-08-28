@@ -1,2 +1,2 @@
 export { signup } from './signup';
-export { loginAsync } from './login';
+export { workerLogin } from './login';

@@ -6,19 +6,25 @@ import cx from 'classnames';
 // Instruments
 import Styles from './styles.m.css';
 import { login } from '../../bus/forms/shapes';
-import { loginAsync } from '../../bus/auth/saga/workers';
+import {authActions} from '../../bus/auth/actions';
+import {connect} from 'react-redux';
 
+const mapStateToProps = (state) => {
+    return {
+        isFetching: state.ui.get('isFetching'),
+    }
+};
+const mapDispatchToProps = {
+    loginAsync: authActions.loginAsync,
+};
+
+@connect(
+    mapStateToProps,
+    mapDispatchToProps
+)
 export default class LoginForm extends Component {
-    static defaultProps = {
-        // State
-        isFetching: false,
-
-        // Actions
-        //loginAsync: loginAsync,
-    };
-
     _submitLoginForm = (credentials) => {
-        loginAsync(credentials);
+        this.props.loginAsync(credentials);
     };
 
     render () {
