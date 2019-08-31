@@ -14,7 +14,6 @@ import {login} from '../bus/forms/shapes';
 const mapStateToProps = (state) => {
     return {
         isAuthenticated: state.auth.get('isAuthenticated'),
-        login: JSON.parse(localStorage.getItem('login')),
     }
 };
 
@@ -24,8 +23,9 @@ const mapStateToProps = (state) => {
 export default class App extends Component {
     render () {
         const { isAuthenticated } = this.props;
+        const isLogin = JSON.parse(localStorage.getItem('login'));
 
-        return isAuthenticated && login ? (
+        return isAuthenticated || isLogin ? (
             <Switch>
                 <Route component = { Feed } path = { book.feed } />
                 <Route component = { Profile } path = { book.profile } />

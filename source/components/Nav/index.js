@@ -33,7 +33,7 @@ export default class Nav extends Component {
                 <div>
                     <NavLink activeClassName = { Styles.active } to = { book.profile }>
                         <img src = { profile.get('avatar') } />
-                        {profile.get('firstName')}
+                        { profile.get('firstName') }
                     </NavLink>
                     <NavLink activeClassName = { Styles.active } to = { book.feed }>
                         Стена
