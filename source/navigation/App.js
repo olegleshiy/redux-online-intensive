@@ -23,9 +23,8 @@ const mapStateToProps = (state) => {
 export default class App extends Component {
     render () {
         const { isAuthenticated } = this.props;
-        const isLogin = JSON.parse(localStorage.getItem('login'));
 
-        return isAuthenticated || isLogin ? (
+        return isAuthenticated ? (
             <Switch>
                 <Route component = { Feed } path = { book.feed } />
                 <Route component = { Profile } path = { book.profile } />

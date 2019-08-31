@@ -17,11 +17,10 @@ export function* workerLogin ({ payload: credentials }) {
         if (response.status !== 200) {
             throw new Error(message);
         }
-        credentials.remember ? localStorage.setItem('login', credentials.remember) : null;
+        //credentials.remember ? localStorage.setItem('login', credentials.remember) : null;
 
         yield put(profileActions.fillProfile(profile));
         yield put(authActions.authenticate());
-        localStorage.setItem('isAuthenticated', 'true');
     } catch (error) {
         yield put(uiActions.emitError(error, 'login worker'));
     } finally {
