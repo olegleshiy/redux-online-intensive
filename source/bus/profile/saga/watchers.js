@@ -8,7 +8,7 @@ import { types } from '../types';
 import { worker } from './workers';
 
 function* watchWorker () {
-    yield takeEvery(types.TYPE, worker);
+    yield takeEvery(types.FILL_PROFILE, worker);
 }
 
 export function* watchDomain () {

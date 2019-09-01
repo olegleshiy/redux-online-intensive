@@ -20,7 +20,6 @@ export function* signup ({ payload: userInfo }) {
 
         yield put(profileActions.fillProfile(profile));
         yield put(authActions.authenticate());
-        localStorage.setItem('isAuthenticated', 'true');
     } catch (error) {
         yield put(uiActions.emitError(error, 'signup worker'));
     } finally {
