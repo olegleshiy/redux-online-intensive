@@ -8,7 +8,3 @@ export function customThunk(store) {
         }
     }
 }
-
-/*
-export const customThunk = (store) => (next) => (action) => typeof action === 'function' ? action(store.dispatch, store.getState) : next(action);
- */
