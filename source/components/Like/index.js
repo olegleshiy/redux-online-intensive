@@ -11,11 +11,11 @@ export default class Like extends Component {
 
     _likePost = () => {
         const {
-            actions: { likePostAsync, unlikePostAsync },
+            actions: { likePostAsync, unLikePostAsync },
             id,
         } = this.props;
 
-        this._getLikedByMe() ? unlikePostAsync(id) : likePostAsync(id);
+        this._getLikedByMe() ? unLikePostAsync(id) : likePostAsync(id);
     };
 
     _showLikers = () => {
