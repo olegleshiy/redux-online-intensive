@@ -14,9 +14,9 @@ export const uiActions = {
     },
     emitError: (error, meta = null) => {
         return {
-            type: types.EMIT_ERROR,
+            type:    types.EMIT_ERROR,
             payload: error,
-            error: true,
+            error:   true,
             meta,
         };
     },

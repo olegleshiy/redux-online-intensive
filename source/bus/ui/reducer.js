@@ -6,7 +6,7 @@ import { types } from './types';
 
 const initialState = Map({
     isFetching: false,
-    isOnline: false,
+    isOnline:   false,
 });
 
 export const uiReducer = (state = initialState, action) => {

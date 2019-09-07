@@ -12,8 +12,7 @@ const initialState = {
         { id: '1', url: photo1 },
         { id: '2', url: photo2 },
         { id: '3', url: photo3 },
-        { id: '4', url: photo4 }
-        ],
+        { id: '4', url: photo4 }],
     selectedPhotoIndex: 0,
 };
 
@@ -24,6 +23,7 @@ export const galleryReducer = (state = initialState, action) => {
             if (state.selectedPhotoIndex === 0) {
                 return state;
             }
+
             return {
                 ...state,
                 selectedPhotoIndex: state.selectedPhotoIndex - 1,
@@ -39,6 +39,7 @@ export const galleryReducer = (state = initialState, action) => {
             if (state.selectedPhotoIndex === state.photos.length - 1) {
                 return state;
             }
+
             return {
                 ...state,
                 selectedPhotoIndex: state.selectedPhotoIndex + 1,

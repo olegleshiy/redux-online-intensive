@@ -14,9 +14,9 @@ import { authActions } from '../../bus/auth/actions';
 const mapStateToProps = (state) => {
     return {
         isAuthenticated: state.auth.get('isAuthenticated'),
-        isOnline: state.ui.get('isOnline'),
-        profile: state.profile,
-    }
+        isOnline:        state.ui.get('isOnline'),
+        profile:         state.profile,
+    };
 };
 
 const mapDispatchToProps = {

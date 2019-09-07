@@ -5,7 +5,7 @@ import { takeEvery, all, call } from 'redux-saga/effects';
 import { types } from '../types';
 
 //Workers
-import {signup, login, logout, authenticate, initialize} from './workers';
+import { signup, login, logout, authenticate, initialize } from './workers';
 
 function* watchSignup () {
     yield takeEvery(types.SIGNUP_ASYNC, signup);

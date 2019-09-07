@@ -5,7 +5,7 @@ export const usersActions = {
     //Sync
     fillUsers: (users) => {
         return {
-            type: types.FILL_USERS,
+            type:    types.FILL_USERS,
             payload: users,
         };
     },

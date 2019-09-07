@@ -22,6 +22,7 @@ export default class Gallery extends Component {
     _showSelectedPhoto = (event) => {
         event.preventDefault();
         const currentImg = event.target.value;
+
         store.dispatch(showSelectedPhoto(currentImg));
         this.forceUpdate();
     };
@@ -38,6 +39,7 @@ export default class Gallery extends Component {
         const selectedPhoto = state.gallery.photos.find(
             (_, photoIndex) => photoIndex === state.gallery.selectedPhotoIndex,
         );
+
         return (
             <section className = { Styles.gallery }>
                 <img src = { selectedPhoto.url } />

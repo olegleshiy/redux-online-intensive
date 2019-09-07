@@ -1,6 +1,6 @@
 // Core
 import React, { Component } from 'react';
-import {Switch, Route, Redirect} from 'react-router-dom';
+import { Switch, Route, Redirect } from 'react-router-dom';
 
 // Pages
 import { Feed, Profile, NewPassword } from '../pages';
@@ -12,19 +12,19 @@ import { book } from './book';
 import { socket } from '../init/socket';
 
 export default class Private extends Component {
-    componentDidMount() {
+    componentDidMount () {
         const { listenPosts } = this.props;
 
         listenPosts();
     }
 
-    componentWillUnmount() {
+    componentWillUnmount () {
         socket.removeListener('create');
         socket.removeListener('remove');
     }
 
     render () {
-        return  (
+        return (
             <Switch>
                 <Route component = { Feed } path = { book.feed } />
                 <Route component = { Profile } path = { book.profile } />

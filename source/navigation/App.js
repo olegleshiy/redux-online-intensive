@@ -21,8 +21,8 @@ import { joinSocketChannel, socket } from '../init/socket';
 const mapStateToProps = (state) => {
     return {
         isAuthenticated: state.auth.get('isAuthenticated'),
-        isInitialized: state.auth.get('isInitialized'),
-    }
+        isInitialized:   state.auth.get('isInitialized'),
+    };
 };
 
 const mapDispatchToProps = {
@@ -37,14 +37,15 @@ const mapDispatchToProps = {
     mapDispatchToProps
 )
 export default class App extends Component {
-    componentDidMount() {
+    componentDidMount () {
         const { initializeAsync, listenConnection } = this.props;
+
         initializeAsync();
         listenConnection();
         joinSocketChannel();
     }
 
-    componentWillUnmount() {
+    componentWillUnmount () {
         socket.removeListener('connect');
         socket.removeListener('disconnect');
     }
@@ -52,10 +53,10 @@ export default class App extends Component {
     render () {
         const { isAuthenticated, isInitialized, listenPosts } = this.props;
 
-        if(!isInitialized) {
+        if (!isInitialized) {
             return <Loading />;
         }
 
         return isAuthenticated ? <Private listenPosts = { listenPosts } /> : <Public />;
-    };
+    }
 }

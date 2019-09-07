@@ -1,7 +1,7 @@
 //Types
 export const types = {
     //Sync
-    FILL_USERS: 'FILL_USERS',
+    FILL_USERS:  'FILL_USERS',
     CLEAR_USERS: 'CLEAR_USERS',
 
     //Async

@@ -16,7 +16,7 @@ import { usersActions } from '../../bus/users/actions';
 
 const mapStateToProps = (state) => {
     return {
-        posts: state.posts,
+        posts:   state.posts,
         profile: state.profile,
     };
 };
@@ -31,6 +31,7 @@ const mapDispatchToProps = (dispatch) => {
 export default class Posts extends Component {
     componentDidMount () {
         const { actions } = this.props;
+
         actions.fetchPostsAsync();
         actions.fetchUsersAsync();
     }

@@ -6,7 +6,7 @@ import { types } from './types';
 
 const initialState = Map({
     isAuthenticated: false,
-    isInitialized: false,
+    isInitialized:   false,
 });
 
 export const authReducer = (state = initialState, action) => {

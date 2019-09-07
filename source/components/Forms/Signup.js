@@ -14,7 +14,7 @@ import { authActions } from '../../bus/auth/actions';
 const mapStateToProps = (state) => {
     return {
         isFetching: state.ui.get('isFetching'),
-    }
+    };
 };
 const mapDispatchToProps = {
     signupAsync: authActions.signupAsync,

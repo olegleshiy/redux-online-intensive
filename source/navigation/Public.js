@@ -1,6 +1,6 @@
 // Core
 import React, { Component } from 'react';
-import {Switch, Route, Redirect} from 'react-router-dom';
+import { Switch, Route, Redirect } from 'react-router-dom';
 
 // Pages
 import { Login, Signup } from '../pages';
@@ -10,7 +10,7 @@ import { book } from './book';
 
 export default class Public extends Component {
     render () {
-        return  (
+        return (
             <Switch>
                 <Route component = { Login } path = { book.login } />
                 <Route component = { Signup } path = { book.signUp } />

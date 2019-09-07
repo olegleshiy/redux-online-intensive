@@ -6,5 +6,5 @@ export const actions = {
         return {
             type: types.TYPE,
         };
-    }
+    },
 };

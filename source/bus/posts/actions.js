@@ -17,7 +17,7 @@ export const postsActions = {
     },
     clearPosts: () => {
         return {
-            type:    types.CLEAR_POSTS,
+            type: types.CLEAR_POSTS,
         };
     },
     removePost: (postId) => {
@@ -47,7 +47,7 @@ export const postsActions = {
     },
     createPostAsync: (comment) => {
         return {
-            type: types.CREATE_POST_ASYNC,
+            type:    types.CREATE_POST_ASYNC,
             payload: comment,
         };
     },
