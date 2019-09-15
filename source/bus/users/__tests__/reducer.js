@@ -15,10 +15,10 @@ describe('auth reducer:', () => {
     });
 
     test('should handle FILL_USERS action', () => {
-        expect(usersReducer(void 0, usersActions.fillUsers(initialState))).toEqual(fromJS(initialState));
+        expect(usersReducer(void 0, usersActions.fillUsers(__.users))).toEqual(fromJS(__.users));
     });
 
     test('should handle CLEAR_USERS action', () => {
-        expect(usersReducer(void 0, usersActions.clearUsers(initialState))).toEqual(initialState.clear());
+        expect(usersReducer(void 0, usersActions.clearUsers())).toEqual(initialState.clear());
     });
 });
