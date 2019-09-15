@@ -54,7 +54,6 @@ const url = 'https://www.url.com';
 
 global.__ = {
     userProfile,
-    users,
     errorMessage,
     token,
     error,
@@ -64,6 +63,7 @@ global.__ = {
     fetchResponseFail401,
     fetchResponseFail400,
     credentials,
+    users,
     url,
 };
 global.fetch = fetch;
