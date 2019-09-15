@@ -21,6 +21,11 @@ const credentials = {
     remember: true,
 };
 
+const users = [
+    { id: 'TEST_ID', avatar: 'TEST_AVATAR', firstName: 'firstName', lastName: 'lastName' },
+    { id: 'TEST_ID', avatar: 'TEST_AVATAR', firstName: 'firstName', lastName: 'lastName' }
+];
+
 const responseDataSuccess = {
     data:    userProfile,
     message: successMesasge,
@@ -49,6 +54,7 @@ const url = 'https://www.url.com';
 
 global.__ = {
     userProfile,
+    users,
     errorMessage,
     token,
     error,
