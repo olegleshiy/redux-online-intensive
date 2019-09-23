@@ -4,39 +4,37 @@ import { cloneableGenerator } from 'redux-saga/utils';
 
 //Instruments
 import { api } from '../../../REST';
-import { authActions } from '../../auth/actions';
+import { usersActions } from '../actions';
 import { uiActions } from '../../ui/actions';
-import { signup } from '../saga/workers';
+import { fetchUsers } from '../saga/workers';
 
-const signupAction = authActions.signupAsync(__.userProfile);
+const usersAction = usersActions.fetchUsersAsync();
 
-const saga = cloneableGenerator(signup)(signupAction);
+const saga = cloneableGenerator(fetchUsers)(usersAction);
 let clone = null;
 
-describe('signup saga', () => {
+describe('users saga', () => {
     describe('should pass util response received', () => {
         test('should dispatch <<startFetching>> action', () => {
             expect(saga.next().value).toEqual(put(uiActions.startFetching()));
         });
 
         test('should call a fetch request', () => {
-            expect(saga.next().value).toEqual(
-                apply(api, api.auth.signup, [__.userProfile])
-            );
+            expect(saga.next().value).toEqual(apply(api, api.users.fetch));
             clone = saga.clone();
         });
     });
 
     describe('should handle a 400 status response', () => {
         test('a fetch request should return 400 status response', () => {
-            expect(clone.next(__.fetchResponseFail400).value).toEqual(
-                apply(__.fetchResponseFail400, __.fetchResponseFail400.json)
+            expect(clone.next(__.fetchResponseFail401).value).toEqual(
+                apply(__.fetchResponseFail401, __.fetchResponseFail401.json)
             );
         });
 
         test('should contain a response data object', () => {
             expect(clone.next(__.responseDataFail).value).toEqual(
-                put(uiActions.emitError(__.error, 'signup worker'))
+                put(uiActions.emitError(__.error, 'fetchUsers worker'))
             );
         });
 
@@ -56,7 +54,7 @@ describe('signup saga', () => {
             );
         });
 
-        test('should dispatch <<fillProfile>> action', () => {
+        test('should dispatch <<fillUsers>> action', () => {
             expect(saga.next(__.responseDataSuccess).value).toMatchInlineSnapshot(`
 Object {
   "@@redux-saga/IO": true,
@@ -69,21 +67,7 @@ Object {
         "lastName": "White",
         "token": "TEST_TOKEN",
       },
-      "type": "FILL_PROFILE",
-    },
-    "channel": null,
-  },
-}
-`);
-        });
-
-        test('should dispatch <<authenticate>> action', () => {
-            expect(saga.next().value).toMatchInlineSnapshot(`
-Object {
-  "@@redux-saga/IO": true,
-  "PUT": Object {
-    "action": Object {
-      "type": "AUTHENTICATE",
+      "type": "FILL_USERS",
     },
     "channel": null,
   },
