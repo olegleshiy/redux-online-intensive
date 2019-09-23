@@ -9,7 +9,6 @@ import { uiActions } from '../../ui/actions';
 import { fetchUsers } from '../saga/workers';
 
 const usersAction = usersActions.fetchUsersAsync();
-
 const saga = cloneableGenerator(fetchUsers)(usersAction);
 let clone = null;
 
