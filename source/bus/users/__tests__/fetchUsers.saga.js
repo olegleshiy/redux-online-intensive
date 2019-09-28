@@ -27,8 +27,8 @@ describe('users saga', () => {
 
     describe('should handle a 400 status response', () => {
         test('a fetch request should return 400 status response', () => {
-            expect(clone.next(__.fetchResponseFail401).value).toEqual(
-                apply(__.fetchResponseFail401, __.fetchResponseFail401.json)
+            expect(clone.next(__.fetchResponseFail400).value).toEqual(
+                apply(__.fetchResponseFail400, __.fetchResponseFail400.json)
             );
         });
 
